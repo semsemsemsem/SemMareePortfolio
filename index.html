@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sem — Game Designer</title>
+
+<!-- ============================================================
+     EDIT GUIDE
+     - Search for  [EDIT]  comments to find everything you can change.
+     - Your name, role, bio, projects and social links are all marked.
+     - Swap the placeholder project cards for your real work.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..600;1,400..500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="wrap">
+    <!-- [EDIT] your name / initials -->
+    <a href="#home" class="brand"><span class="mark"></span>Sem</a>
+    <div style="display:flex;align-items:center;gap:8px">
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="theme-btn" id="themeBtn" aria-label="Switch colour theme" title="Switch theme"></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO / HOME ============ -->
+<header class="hero" id="home">
+  <canvas id="grid" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="hero-avail"><span class="pulse"></span>Open to internships &amp; junior roles</span>
+    <!-- [EDIT] name + what you call yourself -->
+    <h1>Sem<span class="role">Game Designer</span></h1>
+    <!-- [EDIT] one or two sentences: what you make and what you care about -->
+    <p class="hero-sub">Game design student at BUas, designing systems and moment-to-moment play in Unreal Engine. I care about how mechanics feel in the player's hands.</p>
+    <div class="cta-row">
+      <a href="#work" class="btn btn-primary">View selected work
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">01</span><h2>About me</h2></div>
+    <div class="about-grid">
+      <div class="portrait">
+        <!-- [EDIT] replace this block with an <img> of yourself once you host a photo -->
+        <span class="initials">S</span>
+        <span class="hint">Add a photo of yourself here</span>
+      </div>
+      <div class="about-body">
+        <!-- [EDIT] write your own bio — a few honest paragraphs beat a polished cliché -->
+        <p class="lead">I'm Sem, a game design student at Breda University of Applied Sciences, focused on systems design and making play feel good to touch.</p>
+        <p>Write your story here. What got you into games, what you like to design, and what you're building toward. Keep it in your own voice — a couple of specific details (a game that changed how you think, a mechanic you love pulling apart) will do more than any buzzword.</p>
+        <p>Mention how you like to work, what you're currently learning, and the kind of team or project you'd want to join next.</p>
+
+        <div class="facts">
+          <div class="fact">
+            <h4>Toolkit</h4>
+            <!-- [EDIT] your real tools -->
+            <ul>
+              <li>Unreal Engine 5</li><li>Blueprints</li><li>C++</li><li>Unity</li><li>Figma</li><li>Miro</li>
+            </ul>
+          </div>
+          <div class="fact">
+            <h4>Focus areas</h4>
+            <ul>
+              <li>Systems design</li><li>Combat &amp; mechanics</li><li>Prototyping</li><li>Level design</li>
+            </ul>
+          </div>
+          <div class="fact">
+            <h4>Education</h4>
+            <p class="single">BUas — Creative Media &amp; Game Technologies</p>
+          </div>
+          <div class="fact">
+            <h4>Based in</h4>
+            <p class="single">Breda, Netherlands</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK / PROJECTS ============ -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">02</span><h2>Selected work</h2></div>
+    <div class="work-grid">
+
+      <!-- [EDIT] PROJECT 1 — duplicate a card block to add more -->
+      <a class="card" href="projects/project-1.html">
+        <div class="thumb t1"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div class="card-body">
+          <span class="card-role">Systems design · Unreal Engine</span>
+          <h3>Project title 1</h3>
+          <p>One or two sentences on what the project is, your role, and the interesting design problem you solved.</p>
+          <div class="tags"><span class="tag">UE5</span><span class="tag">C++</span><span class="tag">Team of 4</span></div>
+        </div>
+      </a>
+
+      <!-- [EDIT] PROJECT 2 -->
+      <a class="card" href="projects/project-2.html">
+        <div class="thumb t2"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div class="card-body">
+          <span class="card-role">Gameplay prototype</span>
+          <h3>Project title 2</h3>
+          <p>What you were exploring, the mechanic at its core, and what you learned making it.</p>
+          <div class="tags"><span class="tag">Prototype</span><span class="tag">Solo</span></div>
+        </div>
+      </a>
+
+      <!-- [EDIT] PROJECT 3 -->
+      <a class="card" href="projects/project-3.html">
+        <div class="thumb t3"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div class="card-body">
+          <span class="card-role">Level design</span>
+          <h3>Project title 3</h3>
+          <p>The space you designed, the intended player experience, and how it played in testing.</p>
+          <div class="tags"><span class="tag">Level design</span><span class="tag">Unreal</span></div>
+        </div>
+      </a>
+
+      <!-- [EDIT] PROJECT 4 -->
+      <a class="card" href="projects/project-4.html">
+        <div class="thumb t4"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div class="card-body">
+          <span class="card-role">Research · Tech design</span>
+          <h3>Project title 4</h3>
+          <p>A deeper technical or research piece — what question you asked and what you found.</p>
+          <div class="tags"><span class="tag">Research</span><span class="tag">Documentation</span></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / SOCIALS ============ -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <span class="section-num">03</span>
+    <h2 style="margin-top:14px">Let's make something worth playing</h2>
+    <p>Looking for an intern, a collaborator, or just want to talk shop about game design? I'd love to hear from you.</p>
+    <!-- [EDIT] your links — replace the href values, delete any you don't use -->
+    <div class="socials">
+      <a class="social" href="mailto:you@example.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email
+      </a>
+      <a class="social" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>GitHub
+      </a>
+      <a class="social" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21H9V9Z"/></svg>LinkedIn
+      </a>
+      <a class="social" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.13 4.2C2.5 4.85 2 6.2 2 7.06c0 .74 2.06 4.3 2.9 4.3.28 0 .64-.15 1.06-.44l.6-.42v2.9c0 3.02.06 3.2 1.2 3.85.9.5 6.6.5 7.5 0 1.14-.65 1.2-.83 1.2-3.85V10.5l.6.42c.42.29.78.44 1.06.44.84 0 2.9-3.56 2.9-4.3 0-.86-.5-2.2-1.13-2.86-.5-.53-.72-.55-4.37-.6l-1.5-.02v2.1c0 1.98-.03 2.13-.5 2.6-.6.6-1.44.63-2.1.07-.42-.36-.47-.6-.53-2.42l-.06-2.02H7.5c-3.65.05-3.87.07-4.37.6Z"/></svg>itch.io
+      </a>
+      <a class="social" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 1.15 24 10a4.24 4.24 0 0 1-4.28 3.16L14.4 4.02a4.24 4.24 0 0 1 4.5-2.87ZM8.53 6.3 2.4 16.9a4.24 4.24 0 0 0 3.67 2.1h6.13L5.9 6.3H8.53ZM14.32 19h5.4c.4 0 .78-.06 1.14-.16L18.6 14.9 14.32 19Z"/></svg>ArtStation
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© <span id="year"></span> Sem</span>
+    <span>Designed &amp; built in Breda</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var root=document.documentElement;
+
+  /* ---- Theme toggle (persisted per viewer) ---- */
+  var sun='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>';
+  var btn=document.getElementById('themeBtn');
+  function current(){
+    var t=root.getAttribute('data-theme');
+    if(t) return t;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+  }
+  function paint(){ btn.innerHTML = current()==='dark'?sun:moon; }
+  try{ var saved=localStorage.getItem('theme'); if(saved) root.setAttribute('data-theme',saved); }catch(e){}
+  paint();
+  btn.addEventListener('click',function(){
+    var next=current()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+    paint(); resizeGrid();
+  });
+
+  /* ---- Mobile menu ---- */
+  var toggle=document.getElementById('navToggle'), links=document.getElementById('navLinks');
+  toggle.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',open);
+  });
+  links.addEventListener('click',function(e){ if(e.target.tagName==='A'){ links.classList.remove('open'); toggle.setAttribute('aria-expanded',false);} });
+
+  /* ---- Active section in nav ---- */
+  var navA=Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var sections=navA.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        var id='#'+en.target.id;
+        navA.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')===id);});
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  sections.forEach(function(s){ if(s) io.observe(s); });
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  /* ---- Interactive hero dot-grid ---- */
+  var canvas=document.getElementById('grid'), ctx=canvas.getContext('2d');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pts=[], mouse={x:-9999,y:-9999}, dpr=Math.min(window.devicePixelRatio||1,2), raf, running=false;
+
+  function accent(){ return getComputedStyle(root).getPropertyValue('--dot').trim(); }
+  function dim(){ return getComputedStyle(root).getPropertyValue('--dot-dim').trim(); }
+  var cA=accent(), cD=dim();
+
+  function build(){
+    pts=[];
+    var gap=Math.max(34, Math.min(56, canvas.clientWidth/26));
+    var cols=Math.ceil(canvas.clientWidth/gap)+1, rows=Math.ceil(canvas.clientHeight/gap)+1;
+    for(var y=0;y<rows;y++) for(var x=0;x<cols;x++){
+      pts.push({x:x*gap, y:y*gap, r:1.3});
+    }
+  }
+  function resizeGrid(){
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    canvas.width=canvas.clientWidth*dpr; canvas.height=canvas.clientHeight*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    cA=accent(); cD=dim();
+    build(); if(reduce) drawStatic();
+  }
+  function drawStatic(){
+    ctx.clearRect(0,0,canvas.clientWidth,canvas.clientHeight);
+    for(var i=0;i<pts.length;i++){ ctx.beginPath(); ctx.fillStyle=cD; ctx.arc(pts[i].x,pts[i].y,1.3,0,6.283); ctx.fill(); }
+  }
+  function frame(){
+    ctx.clearRect(0,0,canvas.clientWidth,canvas.clientHeight);
+    var R=140;
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i], dx=p.x-mouse.x, dy=p.y-mouse.y, d=Math.sqrt(dx*dx+dy*dy);
+      if(d<R){
+        var f=1-d/R;
+        p.r += ((1.3+f*3.4)-p.r)*0.18;
+        ctx.fillStyle=cA; ctx.globalAlpha=0.35+f*0.65;
+      }else{
+        p.r += (1.3-p.r)*0.12;
+        ctx.fillStyle=cD; ctx.globalAlpha=1;
+      }
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.283); ctx.fill();
+    }
+    ctx.globalAlpha=1;
+    raf=requestAnimationFrame(frame);
+  }
+  function start(){ if(!running && !reduce){ running=true; frame(); } }
+  function stop(){ if(running){ running=false; cancelAnimationFrame(raf); } }
+
+  window.addEventListener('pointermove',function(e){
+    var rect=canvas.getBoundingClientRect();
+    mouse.x=e.clientX-rect.left; mouse.y=e.clientY-rect.top;
+  },{passive:true});
+  window.addEventListener('pointerleave',function(){ mouse.x=-9999; mouse.y=-9999; });
+
+  window.addEventListener('resize',resizeGrid);
+  resizeGrid();
+  if(reduce){ drawStatic(); }
+  else{
+    // pause animation when hero scrolls out of view
+    var hero=document.getElementById('home');
+    new IntersectionObserver(function(en){ en[0].isIntersecting?start():stop(); }).observe(hero);
+    start();
+  }
+})();
+</script>
+</body>
+</html>

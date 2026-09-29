@@ -1,18 +1,18 @@
 /* ---------- Theme tokens ---------- */
 :root{
   /* light is the base */
-  --ink:#f5f4f8;
+  --ink:#f6f3ff;
   --surface:#ffffff;
-  --surface-2:#ece9f2;
-  --text:#1b1724;
-  --muted:#6b6379;
-  --line:rgba(27,23,36,.12);
-  --line-strong:rgba(27,23,36,.22);
-  --accent:#d9660f;
-  --accent-2:#6b46ff;
+  --surface-2:#ece6fb;
+  --text:#1a1433;
+  --muted:#645c85;
+  --line:rgba(26,20,51,.12);
+  --line-strong:rgba(26,20,51,.22);
+  --accent:#c21b8f;
+  --accent-2:#07708a;
   --accent-ink:#ffffff;
-  --dot:rgba(217,102,15,.55);
-  --dot-dim:rgba(27,23,36,.14);
+  --dot:rgba(194,27,143,.5);
+  --dot-dim:rgba(26,20,51,.14);
 
   --font-display:"Bricolage Grotesque",system-ui,sans-serif;
   --font-body:"Instrument Sans",system-ui,sans-serif;
@@ -21,33 +21,33 @@
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --ink:#16131e;
-    --surface:#1e1929;
-    --surface-2:#272033;
-    --text:#f2ece2;
-    --muted:#a79eb5;
-    --line:rgba(242,236,226,.12);
-    --line-strong:rgba(242,236,226,.24);
-    --accent:#ff9e3d;
-    --accent-2:#8f74ff;
-    --accent-ink:#16131e;
-    --dot:rgba(255,158,61,.6);
-    --dot-dim:rgba(242,236,226,.12);
+    --ink:#0e0a1f;
+    --surface:#171133;
+    --surface-2:#221a49;
+    --text:#f3eeff;
+    --muted:#a79ecb;
+    --line:rgba(243,238,255,.12);
+    --line-strong:rgba(243,238,255,.24);
+    --accent:#ff5fd2;
+    --accent-2:#4de1ff;
+    --accent-ink:#0e0a1f;
+    --dot:rgba(255,95,210,.6);
+    --dot-dim:rgba(243,238,255,.13);
   }
 }
 :root[data-theme="dark"]{
-  --ink:#16131e;
-  --surface:#1e1929;
-  --surface-2:#272033;
-  --text:#f2ece2;
-  --muted:#a79eb5;
-  --line:rgba(242,236,226,.12);
-  --line-strong:rgba(242,236,226,.24);
-  --accent:#ff9e3d;
-  --accent-2:#8f74ff;
-  --accent-ink:#16131e;
-  --dot:rgba(255,158,61,.6);
-  --dot-dim:rgba(242,236,226,.12);
+  --ink:#0e0a1f;
+  --surface:#171133;
+  --surface-2:#221a49;
+  --text:#f3eeff;
+  --muted:#a79ecb;
+  --line:rgba(243,238,255,.12);
+  --line-strong:rgba(243,238,255,.24);
+  --accent:#ff5fd2;
+  --accent-2:#4de1ff;
+  --accent-ink:#0e0a1f;
+  --dot:rgba(255,95,210,.6);
+  --dot-dim:rgba(243,238,255,.13);
 }
 
 /* ---------- Base ---------- */
@@ -174,12 +174,12 @@ img{max-width:100%}
 }
 .thumb .go svg{width:18px;height:18px}
 /* varied thumbnail treatments so cards don't read as identical */
-.t1{background:radial-gradient(130% 110% at 15% 15%,#ff9e3d 0%,transparent 55%),radial-gradient(120% 120% at 100% 100%,#8f74ff 0%,transparent 60%),#241d33}
-.t2{background:conic-gradient(from 210deg at 70% 30%,#6b46ff,#d9660f,#ff9e3d,#6b46ff);filter:saturate(1.05)}
-.t3{background:linear-gradient(135deg,#12303a,#1e1929);position:relative}
-.t3::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,158,61,.35) 1.4px,transparent 1.5px);background-size:16px 16px}
-.t4{background:linear-gradient(160deg,#3a1230,#1e1929);position:relative}
-.t4::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(143,116,255,.28) 1px,transparent 1px),linear-gradient(90deg,rgba(143,116,255,.28) 1px,transparent 1px);background-size:26px 26px;mask:radial-gradient(120% 90% at 30% 20%,#000,transparent 75%)}
+.t1{background:radial-gradient(130% 110% at 15% 15%,#ff5fd2 0%,transparent 55%),radial-gradient(120% 120% at 100% 100%,#4de1ff 0%,transparent 60%),#221a49}
+.t2{background:conic-gradient(from 210deg at 70% 30%,#4de1ff,#ff5fd2,#ffa3e6,#4de1ff);filter:saturate(1.05)}
+.t3{background:linear-gradient(135deg,#1e3a64,#171133);position:relative}
+.t3::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,95,210,.45) 1.4px,transparent 1.5px);background-size:16px 16px}
+.t4{background:linear-gradient(160deg,#4a1a5e,#171133);position:relative}
+.t4::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(77,225,255,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(77,225,255,.35) 1px,transparent 1px);background-size:26px 26px;mask:radial-gradient(120% 90% at 30% 20%,#000,transparent 75%)}
 .card-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:11px;flex:1}
 .card-role{font-size:.82rem;color:var(--accent-2);font-weight:600}
 .card h3{font-size:1.4rem}

@@ -151,8 +151,10 @@ img{max-width:100%}
 .portrait .hint{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:.78rem;color:var(--muted)}
 .about-body p{margin:0 0 18px;max-width:62ch}
 .about-body p:last-of-type{margin-bottom:0}
-.lead{font-size:1.22rem;color:var(--text)}
-.lead-open{display:block;font-size:1.45rem;font-weight:500;line-height:1.35;margin-bottom:6px}
+.lead{font-size:1.05rem;color:var(--text)}
+/* opening line: scales with the text column so it stays on one line (wraps only on phones) */
+.about-body{container-type:inline-size}
+.lead-open{display:block;font-size:max(1.1rem,min(1.2rem,2.65cqi));font-weight:500;line-height:1.35;margin-bottom:6px}
 .facts{display:grid;grid-template-columns:1fr 1fr;gap:22px 40px;margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
 .fact h4{font-family:var(--font-body);font-weight:600;font-size:.82rem;color:var(--muted);margin:0 0 10px;text-transform:none;letter-spacing:0}
 .fact ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}

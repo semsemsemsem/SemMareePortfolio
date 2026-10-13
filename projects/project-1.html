@@ -70,10 +70,31 @@
       </ul>
     </section>
 
-    <section class="p-block">
+    <section class="p-block p-wide">
       <h2>Design process</h2>
-      <!-- [EDIT] show your thinking: iterations, playtest feedback, what changed and why -->
-      <p>Walk through how the design evolved. Recruiters and lecturers love seeing the reasoning behind decisions, including the ideas you cut.</p>
+      <p>I didn't start building straight away. I researched the original first, turned that into a plan, and then built and tested the system in small steps.</p>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">01</span>
+          <h3>Research the original</h3>
+          <p>I broke down the turn-based combat of the existing game this tool is based on. A pattern analysis gave me the pattern <em>"Time to strategize"</em>: combat pauses on the player's turn so they can weigh all their options. Game research showed how it serves both casual and competitive players by hiding mechanics like DVs and StatEXP, and I dissected its damage formula to understand what every variable does.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">02</span>
+          <h3>Plan with Conditions of Satisfaction</h3>
+          <p>With many systems depending on each other, it was hard to know where to start. I turned my research into Conditions of Satisfaction, which gave me a clear goal for each week and let me finish one system at a time instead of working on everything at once.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">03</span>
+          <h3>Build a consistent back-end</h3>
+          <p>Most of the logic lives in one battle manager; other blueprints only send it input. The move-select UI, for example, only tells the manager which move was picked, and the manager handles the rest. The project is split into battle logic, data and UI folders, with Perforce for version control and regular builds to keep it stable.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">04</span>
+          <h3>Playtest and iterate</h3>
+          <p>To show how the system can be used, I built a demo level where different creatures, moves and types interact. I ran two playtest sessions, watching others play through it, and used the feedback to balance both the level and the system, ending up with three versions of the demo level.</p>
+        </li>
+      </ol>
     </section>
 
   </div>
@@ -88,7 +109,9 @@
   <section class="p-block">
     <h2>Challenges &amp; what I learned</h2>
     <!-- [EDIT] -->
-    <p>The hardest problem you hit, how you approached it, and what you'd do differently next time.</p>
+    <p>The biggest challenge was scope. Recreating every battle mechanic would have been far too much, so I had to decide what to cut without losing the player experience. My research made those calls easier: StatEXP and DVs make every creature feel unique, but without a catching or switching system they can't shine, so they were easy to cut. The playtest results told me I cut the right things.</p>
+    <p>I also had to change what I was building. I set out to make a complete tool that others could pick up and use, but down-scoping and time constraints pushed me towards a strong foundation that others can build on. I wrote tech research and a how-to document to support that direction, and when others worked with the project they understood how it functioned and got excited to create new content.</p>
+    <blockquote class="takeaway">This project taught me as much about scope management and knowing when to change direction as it did about the technical implementation.</blockquote>
   </section>
 
   <div class="next">

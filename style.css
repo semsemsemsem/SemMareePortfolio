@@ -258,7 +258,7 @@ img{max-width:100%}
 .back svg{width:17px;height:17px}
 .p-hero{padding:64px 0 40px}
 .p-role{color:var(--accent-2);font-weight:600;font-size:.95rem;margin-bottom:14px;display:block}
-.p-hero h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:800;max-width:16ch}
+.p-hero h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:800}
 .p-intro{color:var(--muted);font-size:1.15rem;max-width:58ch;margin:22px 0 0}
 .p-cover{aspect-ratio:16/8;border-radius:18px;border:1px solid var(--line);overflow:hidden;display:grid;place-items:center;color:rgba(255,255,255,.75);font-size:.9rem}
 .p-cover img,.p-cover video,.p-cover iframe{width:100%;height:100%;object-fit:cover;border:0;display:block}

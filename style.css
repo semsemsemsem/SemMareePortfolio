@@ -290,10 +290,6 @@ img{max-width:100%}
 .shot.filled{aspect-ratio:auto;display:block;margin:0;border-style:solid;border-color:var(--line);color:var(--text)}
 .shot.filled img{height:auto;object-fit:contain;background:var(--surface-2)}
 .shot.filled figcaption{padding:14px 16px 16px;color:var(--muted);font-size:.92rem;line-height:1.55;border-top:1px solid var(--line)}
-/* side: tall image on the left, caption beside it */
-.shot.filled.side{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center}
-.shot.filled.side figcaption{border-top:0;border-left:1px solid var(--line);align-self:stretch;display:flex;align-items:center;padding:24px 28px;font-size:1rem}
-@media (max-width:760px){.shot.filled.side{grid-template-columns:1fr}.shot.filled.side figcaption{border-left:0;border-top:1px solid var(--line);padding:14px 16px 16px;font-size:.92rem}}
 .p-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
 .next{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:40px 0 72px;border-top:1px solid var(--line)}
 .next a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:18px 22px;transition:border-color .18s;min-width:240px}
@@ -305,3 +301,9 @@ img{max-width:100%}
   .gallery{grid-template-columns:1fr}
   .next a{width:100%}
 }
+
+/* pair: two images side by side with one shared caption (bg matches the doc pages) */
+.pair-imgs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);align-items:stretch}
+.pair-imgs a{display:block;background:#262626;height:100%}
+.pair-imgs img{background:#262626}
+@media (max-width:760px){.pair-imgs{grid-template-columns:1fr}}

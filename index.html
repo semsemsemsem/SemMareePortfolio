@@ -40,8 +40,13 @@
 
 <!-- ============ HERO / HOME ============ -->
 <header class="hero" id="home">
-  <canvas id="grid" aria-hidden="true"></canvas>
-  <div class="wrap hero-grid">
+  <!-- [EDIT] background loop: images/hero-loop.mp4 (muted, ~15s); poster shows while loading and for reduced motion -->
+  <video class="hero-bg" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="images/hero-poster.webp" aria-hidden="true">
+    <source src="images/hero-loop.webm" type="video/webm">
+    <source src="images/hero-loop.mp4" type="video/mp4">
+  </video>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap">
     <div class="hero-text">
       <span class="hero-avail"><span class="pulse"></span>Looking for a systems design internship · Fall 2027</span>
       <!-- [EDIT] headline: what you are, in one line -->
@@ -55,16 +60,8 @@
         <a href="#contact" class="btn btn-ghost">Get in touch</a>
       </div>
     </div>
-    <!-- [EDIT] showreel / gameplay video: swap the YouTube ID in the src -->
-    <figure class="hero-video">
-      <div class="frame">
-        <iframe src="https://www.youtube-nocookie.com/embed/pBOzh8faXiA" title="Turn based combat tool: gameplay video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <figcaption>Gameplay from <a href="projects/project-1.html">A turn based combat tool</a></figcaption>
-    </figure>
   </div>
+  <a class="hero-credit" href="projects/project-1.html">Gameplay: A turn based combat tool →</a>
 </header>
 
 <main>
@@ -194,69 +191,17 @@
   sections.forEach(function(s){ if(s) io.observe(s); });
 
 
-  /* ---- Interactive hero dot-grid ---- */
-  var canvas=document.getElementById('grid'), ctx=canvas.getContext('2d');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var pts=[], mouse={x:-9999,y:-9999}, dpr=Math.min(window.devicePixelRatio||1,2), raf, running=false;
-
-  function accent(){ return getComputedStyle(root).getPropertyValue('--dot').trim(); }
-  function dim(){ return getComputedStyle(root).getPropertyValue('--dot-dim').trim(); }
-  var cA=accent(), cD=dim();
-
-  function build(){
-    pts=[];
-    var gap=Math.max(34, Math.min(56, canvas.clientWidth/26));
-    var cols=Math.ceil(canvas.clientWidth/gap)+1, rows=Math.ceil(canvas.clientHeight/gap)+1;
-    for(var y=0;y<rows;y++) for(var x=0;x<cols;x++){
-      pts.push({x:x*gap, y:y*gap, r:1.3});
+  /* ---- Hero background video: still image for reduced motion, pause when off-screen ---- */
+  var vid=document.getElementById('heroVideo');
+  if(vid){
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce){ vid.removeAttribute('autoplay'); vid.pause(); }
+    else{
+      new IntersectionObserver(function(en){
+        if(en[0].isIntersecting){ var pr=vid.play(); if(pr&&pr.catch) pr.catch(function(){}); }
+        else vid.pause();
+      }).observe(vid);
     }
-  }
-  function resizeGrid(){
-    dpr=Math.min(window.devicePixelRatio||1,2);
-    canvas.width=canvas.clientWidth*dpr; canvas.height=canvas.clientHeight*dpr;
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    cA=accent(); cD=dim();
-    build(); if(reduce) drawStatic();
-  }
-  function drawStatic(){
-    ctx.clearRect(0,0,canvas.clientWidth,canvas.clientHeight);
-    for(var i=0;i<pts.length;i++){ ctx.beginPath(); ctx.fillStyle=cD; ctx.arc(pts[i].x,pts[i].y,1.3,0,6.283); ctx.fill(); }
-  }
-  function frame(){
-    ctx.clearRect(0,0,canvas.clientWidth,canvas.clientHeight);
-    var R=140;
-    for(var i=0;i<pts.length;i++){
-      var p=pts[i], dx=p.x-mouse.x, dy=p.y-mouse.y, d=Math.sqrt(dx*dx+dy*dy);
-      if(d<R){
-        var f=1-d/R;
-        p.r += ((1.3+f*3.4)-p.r)*0.18;
-        ctx.fillStyle=cA; ctx.globalAlpha=0.35+f*0.65;
-      }else{
-        p.r += (1.3-p.r)*0.12;
-        ctx.fillStyle=cD; ctx.globalAlpha=1;
-      }
-      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.283); ctx.fill();
-    }
-    ctx.globalAlpha=1;
-    raf=requestAnimationFrame(frame);
-  }
-  function start(){ if(!running && !reduce){ running=true; frame(); } }
-  function stop(){ if(running){ running=false; cancelAnimationFrame(raf); } }
-
-  window.addEventListener('pointermove',function(e){
-    var rect=canvas.getBoundingClientRect();
-    mouse.x=e.clientX-rect.left; mouse.y=e.clientY-rect.top;
-  },{passive:true});
-  window.addEventListener('pointerleave',function(){ mouse.x=-9999; mouse.y=-9999; });
-
-  window.addEventListener('resize',resizeGrid);
-  resizeGrid();
-  if(reduce){ drawStatic(); }
-  else{
-    // pause animation when hero scrolls out of view
-    var hero=document.getElementById('home');
-    new IntersectionObserver(function(en){ en[0].isIntersecting?start():stop(); }).observe(hero);
-    start();
   }
 })();
 </script>

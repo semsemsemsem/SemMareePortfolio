@@ -142,6 +142,13 @@
           <li><strong>Two playtest sessions:</strong> watching others play through it, then balancing both the level and the system based on their feedback.</li>
           <li><strong>Three versions</strong> of the demo level in total.</li>
         </ul>
+        <figure class="p-figure">
+          <video autoplay muted loop playsinline preload="metadata" poster="../images/combat-tool-battle-turn.webp" aria-label="One battle turn in the demo level: picking Attack, choosing a move, then both creatures taking damage">
+            <source src="../images/combat-tool-battle-turn.mp4" type="video/mp4">
+            <source src="../images/combat-tool-battle-turn.webm" type="video/webm">
+          </video>
+          <figcaption><strong>One turn in the demo level:</strong> pick Attack, choose a move, and the battle manager runs the rest: speed check, damage to the opponent, then the opponent's move.</figcaption>
+        </figure>
       </div>
     </section>
   </div>
@@ -155,11 +162,16 @@
 
   <div class="next">
     <a href="../index.html#work"><small>Back to</small><strong>All work</strong></a>
-    <a href="project-2.html" style="text-align:right"><small>Next project</small><strong>Project title 2</strong></a>
   </div>
 
 </main>
 
 
+<script>
+  /* looping clips: show the still image instead for visitors who prefer reduced motion */
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('video[autoplay]').forEach(function(v){ v.removeAttribute('autoplay'); v.pause(); });
+  }
+</script>
 </body>
 </html>

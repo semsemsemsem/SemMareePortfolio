@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- [EDIT] tab title -->
-<title>A turn based combat tool — Sem</title>
+<title>A turn based combat tool — Sem Maree</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..600;1,400..500&display=swap" rel="stylesheet">
@@ -14,10 +14,9 @@
 
 <nav class="nav">
   <div class="wrap">
-    <a href="../index.html" class="brand"><span class="mark"></span>Sem</a>
+    <a href="../index.html" class="brand"><span class="mark"></span>Sem Maree</a>
     <div style="display:flex;align-items:center;gap:8px">
       <a href="../index.html#work" class="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>All work</a>
-      <button class="theme-btn" id="themeBtn" aria-label="Switch colour theme" title="Switch theme"></button>
     </div>
   </div>
 </nav>
@@ -30,7 +29,7 @@
     <!-- [EDIT] project name -->
     <h1>A turn based combat tool</h1>
     <!-- [EDIT] one-paragraph pitch: what it is and why it's interesting -->
-    <p class="p-intro">In this solo-project I have created a modular system that other developers are able to add to their existing projects to implement a turn-based battle system to their game.</p>
+    <p class="p-intro">A modular turn-based combat system for Unreal Engine 5, built solo in 8 weeks. Other developers can add it to their existing projects and adapt it to fit their game.</p>
   </header>
 
   <!-- [EDIT] cover: replace the text with <img src="../images/project-1-cover.jpg" alt="...">
@@ -43,10 +42,10 @@
 
   <!-- [EDIT] quick facts -->
   <div class="p-meta">
-    <div><h4>My role</h4><p>Tool designer</p></div>
-    <div><h4>Team</h4><p>1 person</p></div>
-    <div><h4>Duration</h4><p>8 weeks</p></div>
-    <div><h4>Tools</h4><p>Unreal Engine 5</p></div>
+    <div><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>My role</h4><p>Tool designer</p></div>
+    <div><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Team</h4><p>1 person</p></div>
+    <div><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Duration</h4><p>8 weeks</p></div>
+    <div><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>Tools</h4><p>Unreal Engine 5</p></div>
   </div>
 
   <div class="p-body">
@@ -54,7 +53,8 @@
     <section class="p-block">
       <h2>Overview</h2>
       <!-- [EDIT] -->
-      <p>The goal for this project was to break down an existing feature and create a plug-in that other users would be able to add to their projects. The main thing I focused on was modularity, I wanted users to be able to make changes so that it fits their use-case.</p>
+      <p><strong>Goal:</strong> break down the turn-based combat of an existing game and rebuild it as a plug-in other developers can add to their projects.</p>
+      <p><strong>Main focus:</strong> modularity. Every part can be changed to fit the user's own use-case.</p>
     </section>
 
     <section class="p-block">
@@ -72,58 +72,85 @@
 
     <section class="p-block p-wide">
       <h2>Design process</h2>
-      <p>I didn't start building straight away. I researched the original first, turned that into a plan, and then built and tested the system in small steps.</p>
-      <ol class="steps">
-        <li class="step">
-          <span class="step-num">01</span>
-          <h3>Research the original</h3>
-          <p>I broke down the turn-based combat of the existing game this tool is based on. A pattern analysis gave me the pattern <em>"Time to strategize"</em>: combat pauses on the player's turn so they can weigh all their options. Game research showed how it serves both casual and competitive players by hiding mechanics like DVs and StatEXP, and I dissected its damage formula to understand what every variable does.</p>
-        </li>
-        <li class="step">
-          <span class="step-num">02</span>
-          <h3>Plan with Conditions of Satisfaction</h3>
-          <p>With many systems depending on each other, it was hard to know where to start. I turned my research into Conditions of Satisfaction, which gave me a clear goal for each week and let me finish one system at a time instead of working on everything at once.</p>
-        </li>
-        <li class="step">
-          <span class="step-num">03</span>
-          <h3>Build a consistent back-end</h3>
-          <p>Most of the logic lives in one battle manager; other blueprints only send it input. The move-select UI, for example, only tells the manager which move was picked, and the manager handles the rest. The project is split into battle logic, data and UI folders, with Perforce for version control and regular builds to keep it stable.</p>
-        </li>
-        <li class="step">
-          <span class="step-num">04</span>
-          <h3>Playtest and iterate</h3>
-          <p>To show how the system can be used, I built a demo level where different creatures, moves and types interact. I ran two playtest sessions, watching others play through it, and used the feedback to balance both the level and the system, ending up with three versions of the demo level.</p>
-        </li>
-      </ol>
-    </section>
 
-  </div>
-
-  <!-- [EDIT] screenshots: placeholders are <div class="shot">; a filled one is <figure class="shot filled"> with an <img> and a <figcaption> -->
-  <div class="gallery">
-    <figure class="shot wide filled">
-      <a href="../images/combat-tool-battle-manager.png" target="_blank" rel="noopener" title="Open full size"><img src="../images/combat-tool-battle-manager.png" alt="Battle manager blueprint: a BattleUpdate event switches on the battle state and runs one of six stages, from Start through player action, opponent action, speed calculation and damage calculation to BattleWon" loading="lazy"></a>
-      <figcaption>This is how I handled the combat logic. At the start of a turn the battle manager activates each stage one by one, which makes the order of combat easy to follow and shows exactly where to make changes if you want to. If the battle-won condition isn't met, it loops back on itself.</figcaption>
-    </figure>
-    <figure class="shot wide filled">
-      <a href="../images/combat-tool-data-table.png" target="_blank" rel="noopener" title="Open full size"><img src="../images/combat-tool-data-table.png" alt="Data table with one row per creature: name, type, level, four moves and base stats such as hit points, attack, defense and speed" loading="lazy"></a>
-      <figcaption>This is how I stored the back-end data for each creature, in a data table. Doing it this way makes it easy for users to add new creatures or edit existing ones, and even to add completely new values if they want to.</figcaption>
-    </figure>
-    <figure class="shot wide filled pair">
-      <div class="pair-imgs">
-        <a href="../images/combat-tool-ui-experiment.png" target="_blank" rel="noopener" title="Open full size"><img src="../images/combat-tool-ui-experiment.png" alt="Research log page for Experiment 8: testing widgets to show battle information and take player input" loading="lazy"></a>
-        <a href="../images/combat-tool-commonui-experiment.png" target="_blank" rel="noopener" title="Open full size"><img src="../images/combat-tool-commonui-experiment.png" alt="Research log page for Experiment 9: testing whether CommonUI's widget stacks manage layered menus better than regular widgets" loading="lazy"></a>
+      <!-- 01 RESEARCH -->
+      <div class="p-step">
+        <div class="p-step-head"><span class="step-num">01</span><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>Research</h3></div>
+        <ul class="p-points">
+          <li><strong>Player experience:</strong> a pattern analysis gave me <em>"Time to strategize"</em>: combat pauses on the player's turn so they can weigh all their options.</li>
+          <li><strong>Hidden mechanics:</strong> stats like DVs and StatEXP serve casual and competitive players at the same time. You don't need them to win, but they give an edge if you know them.</li>
+          <li><strong>Damage formula:</strong> dissected variable by variable, to know exactly what each part does.</li>
+          <li><strong>Tech research:</strong> small experiments to find the best way to build each part, like the UI example below.</li>
+        </ul>
+        <!-- [EDIT] one research example, broken down -->
+        <div class="research">
+          <a class="research-img" href="../images/combat-tool-commonui-experiment.png" target="_blank" rel="noopener" title="Open full size"><img src="../images/combat-tool-commonui-experiment.png" alt="Research log page: testing whether CommonUI's widget stacks manage layered menus better than regular widgets" loading="lazy"></a>
+          <div class="research-body">
+            <span class="research-label">Research example · Battle UI</span>
+            <dl>
+              <dt>Intention</dt>
+              <dd>The battle menu has layers: pick Attack, then a move, or go back. Each layer has to open and close in the right order.</dd>
+              <dt>Question</dt>
+              <dd>Can CommonUI manage widgets stacked on top of each other better than regular widgets?</dd>
+              <dt>Why</dt>
+              <dd>An earlier experiment showed regular widgets work well for battle information and input, but activating several at once was a headache.</dd>
+              <dt>Result</dt>
+              <dd>CommonUI's activatable stacks remember the previous widget when you push or remove one, which makes navigating menus a lot easier.</dd>
+              <dt>Applied</dt>
+              <dd>The battle UI is built with CommonUI, then still an experimental feature.</dd>
+            </dl>
+          </div>
+        </div>
       </div>
-      <figcaption>Two of my research experiments into how to build the UI. Experiment 8 showed that widgets were the way to go, but managing several of them at once was a headache. That led me to CommonUI, then still an experimental feature. Experiment 9 showed that its widget stacks remember the previous menu when you push or remove a widget, so I used CommonUI to build the UI to make effective use of its stacking of UI elements.</figcaption>
-    </figure>
+
+      <!-- 02 PLAN -->
+      <div class="p-step">
+        <div class="p-step-head"><span class="step-num">02</span><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg>Plan</h3></div>
+        <ul class="p-points">
+          <li><strong>Conditions of Satisfaction:</strong> based on the research, with a clear goal for each week.</li>
+          <li><strong>One system at a time:</strong> with many systems depending on each other, the CoS made it possible to finish one part before starting the next, instead of working on everything at once.</li>
+        </ul>
+        <figure class="p-figure">
+          <a href="../images/combat-tool-cos.png" target="_blank" rel="noopener" title="Open full size"><img src="../images/combat-tool-cos.png" alt="Conditions of Satisfaction table: features grouped into data storage, battle manager, damage calculation, UI and battle environment, each with acceptance criteria, last week's level, the planned level, development status and a pass or fail test result" loading="lazy"></a>
+          <figcaption><strong>Conditions of Satisfaction:</strong> every feature with its acceptance criteria, then last week's level, the planned level, development status and test result. Cancelled features and failed tests stay visible, so scope decisions are tracked too.</figcaption>
+        </figure>
+      </div>
+
+      <!-- 03 BUILD -->
+      <div class="p-step">
+        <div class="p-step-head"><span class="step-num">03</span><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>Build</h3></div>
+        <ul class="p-points">
+          <li><strong>Battle manager:</strong> holds most of the logic; other blueprints only send it input. The move-select UI only tells it which move was picked, and the manager handles the rest.</li>
+          <li><strong>Data:</strong> every creature lives in one data table.</li>
+          <li><strong>Structure:</strong> battle logic, data and UI in their own folders, Perforce for version control, and regular builds to keep the project stable.</li>
+        </ul>
+        <figure class="p-figure">
+          <a href="../images/combat-tool-battle-manager.png" target="_blank" rel="noopener" title="Open full size"><img src="../images/combat-tool-battle-manager.png" alt="Battle manager blueprint: a BattleUpdate event switches on the battle state and runs one of six stages, from Start through player action, opponent action, speed calculation and damage calculation to BattleWon" loading="lazy"></a>
+          <figcaption><strong>Combat logic:</strong> at the start of a turn the battle manager runs each stage one by one, so the order of combat is easy to follow and easy to change. If the battle-won condition isn't met, it loops back on itself.</figcaption>
+        </figure>
+        <figure class="p-figure">
+          <a href="../images/combat-tool-data-table.png" target="_blank" rel="noopener" title="Open full size"><img src="../images/combat-tool-data-table.png" alt="Data table with one row per creature: name, type, level, four moves and base stats such as hit points, attack, defense and speed" loading="lazy"></a>
+          <figcaption><strong>Creature data:</strong> one data table holds every creature, so adding a new one, editing an existing one or adding a completely new value is a matter of editing a row or adding a column.</figcaption>
+        </figure>
+      </div>
+
+      <!-- 04 PLAYTEST -->
+      <div class="p-step">
+        <div class="p-step-head"><span class="step-num">04</span><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M6 12h4"/><path d="M8 10v4"/><path d="M15 13h.01"/><path d="M18 11h.01"/></svg>Playtest</h3></div>
+        <ul class="p-points">
+          <li><strong>Demo level:</strong> shows how different creatures, moves and types interact.</li>
+          <li><strong>Two playtest sessions:</strong> watching others play through it, then balancing both the level and the system based on their feedback.</li>
+          <li><strong>Three versions</strong> of the demo level in total.</li>
+        </ul>
+      </div>
+    </section>
   </div>
 
   <section class="p-block">
     <h2>Challenges &amp; what I learned</h2>
     <!-- [EDIT] -->
-    <p>The biggest challenge was scope. Recreating every battle mechanic would have been far too much, so I had to decide what to cut without losing the player experience. My research made those calls easier: StatEXP and DVs make every creature feel unique, but without a catching or switching system they can't shine, so they were easy to cut. The playtest results told me I cut the right things.</p>
-    <p>I also had to change what I was building. I set out to make a complete tool that others could pick up and use, but down-scoping and time constraints pushed me towards a strong foundation that others can build on. I wrote tech research and a how-to document to support that direction, and when others worked with the project they understood how it functioned and got excited to create new content.</p>
-    <blockquote class="takeaway">This project taught me as much about scope management and knowing when to change direction as it did about the technical implementation.</blockquote>
+    <p><strong>Scope:</strong> recreating every battle mechanic was too much. Research decided what to cut: StatEXP and DVs make every creature feel unique, but without a catching or switching system they can't shine. Playtests confirmed the cuts.</p>
+    <p><strong>Direction:</strong> the goal shifted from a complete tool others could pick up and use, to a strong foundation they can build on. Tech research and a how-to document support that shift, and testers understood how the system worked and got excited to create new content.</p>
   </section>
 
   <div class="next">
@@ -133,22 +160,6 @@
 
 </main>
 
-<footer class="footer">
-  <div class="wrap"><span>© <span id="year"></span> Sem</span></div>
-</footer>
 
-<script>
-(function(){
-  var root=document.documentElement, btn=document.getElementById('themeBtn');
-  var sun='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
-  var moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>';
-  function cur(){return root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}
-  function paint(){btn.innerHTML=cur()==='dark'?sun:moon;}
-  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s);}catch(e){}
-  paint();
-  btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}paint();});
-  document.getElementById('year').textContent=new Date().getFullYear();
-})();
-</script>
 </body>
 </html>

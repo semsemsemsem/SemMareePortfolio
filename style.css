@@ -158,6 +158,13 @@ img{max-width:100%}
 /* ---------- Contact ---------- */
 .contact{text-align:center}
 .contact h2{font-size:clamp(2.2rem,6.5vw,4rem);margin:14px auto 34px}
+.looking{list-style:none;margin:0 auto 36px;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.looking li{display:flex;align-items:center;gap:12px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 20px 14px 16px;min-width:200px}
+.looking .ico{width:24px;height:24px}
+.looking small{display:block;color:var(--muted);font-size:.78rem;font-weight:600;margin-bottom:1px}
+.looking span{font-family:var(--font-display);font-weight:700;font-size:1.15rem;line-height:1.2}
+.looking span small{font-family:var(--font-body)}
+@media (max-width:560px){.looking{flex-direction:column;align-items:center}.looking li{width:100%;max-width:300px}}
 .socials{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 .social{
   display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border-radius:11px;
